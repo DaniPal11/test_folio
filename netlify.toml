@@ -1,10 +1,11 @@
 [build]
-command = "npm run build"
+command = "pnpm run build"
 functions = "netlify/functions"
 publish = "dist/spa"
 
 [build.environment]
 NODE_VERSION = "20"
+NPM_FLAGS = "--version"
 
 [functions]
 external_node_modules = ["express"]

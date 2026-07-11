@@ -41,6 +41,45 @@ const otherProjects = [
 
 const tools = ["Figma", "Adobe XD", "Illustrator", "Photoshop", "Notion", "Affinity"];
 
+const services = [
+  {
+    title: "UX/UI",
+    description:
+      "Interfaces intuitivas, limpias y pensadas para que la experiencia sea clara desde el primer clic.",
+  },
+  {
+    title: "Investigación",
+    description:
+      "Descubrimiento de necesidades, mapeo de usuarios y definición de problemas para guiar decisiones de diseño.",
+  },
+  {
+    title: "Diseño visual",
+    description:
+      "Jerarquía, identidad visual y sistematización para comunicar con coherencia y impacto.",
+  },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Entender",
+    description:
+      "Analizo contexto, usuarios y objetivos para identificar oportunidades reales de mejora.",
+  },
+  {
+    step: "02",
+    title: "Diseñar",
+    description:
+      "Transformo ideas en estructuras, flujos y propuestas visuales claras y testables.",
+  },
+  {
+    step: "03",
+    title: "Entregar",
+    description:
+      "Acompaño la implementación con detalle, consistencia y foco en resultados útiles.",
+  },
+];
+
 export default function Index() {
   return (
     <Layout>
@@ -66,11 +105,80 @@ export default function Index() {
             Ver proyectos
           </a>
           <a
+            href="/cv-valentina-correa.pdf"
+            download
+            className="rounded-full border border-border px-7 py-3.5 text-base font-bold text-foreground transition-colors hover:bg-muted"
+          >
+            Descargar CV
+          </a>
+          <a
             href="#contacto"
             className="rounded-full border border-border px-7 py-3.5 text-base font-bold text-foreground transition-colors hover:bg-muted"
           >
             Contactar
           </a>
+        </div>
+      </section>
+
+      {/* Servicios */}
+      <section
+        id="servicios"
+        className="mx-auto flex max-w-[1100px] scroll-mt-20 flex-col items-start gap-8 px-6 py-10"
+      >
+        <div className="flex max-w-[700px] flex-col gap-3">
+          <p className="text-sm font-bold uppercase tracking-[1.088px] text-brand-pink">
+            Servicios
+          </p>
+          <h2 className="text-3xl font-bold tracking-[-0.352px] text-foreground sm:text-[35px]">
+            Diseño con enfoque humano y claridad
+          </h2>
+          <p className="text-base leading-relaxed text-muted-foreground">
+            Creo experiencias que ayudan a las personas a entender mejor, actuar con confianza y conectar con productos que realmente sirven.
+          </p>
+        </div>
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
+            >
+              <h3 className="text-lg font-bold text-foreground">{service.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Cómo trabajo */}
+      <section
+        id="proceso"
+        className="mx-auto flex max-w-[1100px] scroll-mt-20 flex-col items-start gap-8 px-6 py-10"
+      >
+        <div className="flex max-w-[700px] flex-col gap-3">
+          <p className="text-sm font-bold uppercase tracking-[1.088px] text-brand-pink">
+            Cómo trabajo
+          </p>
+          <h2 className="text-3xl font-bold tracking-[-0.352px] text-foreground sm:text-[35px]">
+            Un proceso claro para convertir ideas en experiencias útiles
+          </h2>
+        </div>
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+          {process.map((item) => (
+            <div
+              key={item.step}
+              className="rounded-2xl border border-border bg-background p-6"
+            >
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-pink">
+                {item.step}
+              </p>
+              <h3 className="mt-3 text-lg font-bold text-foreground">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -130,6 +238,13 @@ export default function Index() {
             construir productos digitales estéticos, accesibles y centrados
             en el usuario.
           </p>
+          <a
+            href="/cv-valentina-correa.pdf"
+            download
+            className="rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground/85 transition-opacity hover:opacity-90"
+          >
+            Descargar CV
+          </a>
           <h3 className="text-lg font-bold text-foreground">Herramientas</h3>
           <ul className="flex flex-wrap items-start gap-2.5">
             {tools.map((tool) => (
@@ -152,8 +267,8 @@ export default function Index() {
         <h2 className="text-center text-3xl font-bold tracking-[-0.352px] text-foreground sm:text-[35px]">
           Hablemos
         </h2>
-        <p className="pb-3 text-center text-base text-muted-foreground">
-          ¿Tenés un proyecto en mente o querés charlar? Escribime.
+        <p className="max-w-[620px] pb-3 text-center text-base text-muted-foreground">
+          Estoy abierta a proyectos, colaboraciones y oportunidades de diseño. Si querés construir algo claro, útil y con buena experiencia de usuario, escribime.
         </p>
         <a
           href="mailto:valentinacorrea.sc@gmail.com"

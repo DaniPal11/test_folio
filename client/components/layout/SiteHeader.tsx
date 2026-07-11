@@ -9,6 +9,22 @@ export default function SiteHeader() {
           <ul className="flex items-center gap-8">
             <li>
               <a
+                href="#servicios"
+                className="text-base text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Servicios
+              </a>
+            </li>
+            <li>
+              <a
+                href="#proceso"
+                className="text-base text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Proceso
+              </a>
+            </li>
+            <li>
+              <a
                 href="#trabajo"
                 className="text-base text-muted-foreground transition-colors hover:text-foreground"
               >
